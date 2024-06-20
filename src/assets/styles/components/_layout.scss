@@ -1,0 +1,16 @@
+@import '../base/globals';
+
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $grayscale_ECECF1;
+
+  .layout-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 'calc(100vh - 100px)';
+  }
+}

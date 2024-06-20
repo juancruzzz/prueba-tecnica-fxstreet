@@ -1,0 +1,37 @@
+@import "../base/globals";
+
+.sidebar {
+  background-color: $brand_corp;
+  color: $grayscale_lightest;
+  width: 255px;
+  height: 100vh;
+
+  .sidebar-logo {
+    margin-bottom: 2rem;
+    width: 163px;
+    height: 53.94px;
+    padding-top: 47px;
+    padding-bottom: 47px;
+    margin-left: 46px;
+  }
+
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 46px;
+    gap: 3px;
+    li {
+      margin: 1rem 0;
+      height: 41px;
+
+      a {
+        color: $grayscale_lightest;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

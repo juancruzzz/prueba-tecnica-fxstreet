@@ -1,0 +1,59 @@
+@import '../base/globals';
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  height: 65px;
+  .filters-left {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: $grayscale_49494f;
+      cursor: pointer;
+      font-weight: bold;
+
+      &.active {
+        color: $highlight_E4871B;
+      }
+
+      &:hover {
+        color: $highlight_E4871B;
+      }
+    }
+  }
+
+  .filters-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+      color: $grayscale_49494f;
+      font-size: 14px;
+    }
+
+    .show-all {
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: $grayscale_49494f;
+      cursor: pointer;
+      font-weight: bold;
+
+      &:hover {
+        color: $highlight_E4871B;
+      }
+    }
+
+    .dropdown-icon {
+      color: $grayscale_49494f;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
+}
