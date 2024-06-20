@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../assets/styles/components/_dashboard.scss';
 import Filters from '../components/Filters';
+import Posts from '../components/Posts';
 
 const Dashboard: React.FC = () => {
     const [selectedFilter, setSelectedFilter] = useState('latest');
@@ -23,6 +24,8 @@ const Dashboard: React.FC = () => {
                         <h1>Popular</h1>
                     </div>
                 ) }
+
+                <Posts />
             </div>
         </div>
     );
