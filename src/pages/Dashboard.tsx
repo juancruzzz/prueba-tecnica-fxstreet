@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import '../assets/styles/components/_dashboard.scss';
 import Filters from '../components/Filters';
-import Posts from '../components/Posts';
+import Posts from '../components/Posts/Posts';
 
 const Dashboard: React.FC = () => {
     const [selectedFilter, setSelectedFilter] = useState('latest');
@@ -13,19 +12,24 @@ const Dashboard: React.FC = () => {
     return (
         <div className="dashboard">
             <div className="dashboard-content">
-                <Filters selectedFilter={ selectedFilter } onFilterChange={ handleFilterChange } />
-                { selectedFilter === 'latest' && (
-                    <div className="content latest">
-                        <h1>Latest</h1>
+                <div className="content-column">
+                    <Filters selectedFilter={ selectedFilter } onFilterChange={ handleFilterChange } />
+                    <Posts filter={ selectedFilter } />
+                </div>
+                <div className="sidebar-column">
+                    <div className="additional-content">
+                        <div className="additional-title"></div>
+                        <div className="additional-bar"></div>
                     </div>
-                ) }
-                { selectedFilter === 'popular' && (
-                    <div className="content popular">
-                        <h1>Popular</h1>
-                    </div>
-                ) }
 
-                <Posts />
+                    <div className="sidebar-container">
+                        <div className="sidebar-content">
+                            <div className="sidebar-title"></div>
+                            <div className="sidebar-circle"></div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     );

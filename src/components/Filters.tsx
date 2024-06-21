@@ -1,5 +1,4 @@
 import React from 'react';
-import '../assets/styles/components/_filters.scss';
 
 interface FiltersProps {
   selectedFilter: string;

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../assets/styles/components/_layout.scss';
 import Header from './Header';
 import Sidebar from './Sidebar';
 

@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: end;
-  height: 65px;
+  min-height: 65px;
   .filters-left {
     display: flex;
     gap: 1rem;
@@ -13,7 +13,7 @@
       background: none;
       border: none;
       font-size: 16px;
-      color: $grayscale_49494f;
+      color: $grayscale_8C8D91;
       cursor: pointer;
       font-weight: bold;
 
@@ -22,7 +22,7 @@
       }
 
       &:hover {
-        color: $highlight_E4871B;
+        color: $brand_blue;
       }
     }
   }

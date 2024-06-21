@@ -1,11 +1,11 @@
-@import '../base/globals';
+@import "../base/globals";
 
 .posts {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 1rem;
-  background-color: #f9f9f9;
+  padding-bottom: 20px;
+  position: relative;
 }
 
 .post {
@@ -20,35 +20,38 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 1.5rem;
-    background-color: $grayscale_dddef;
-    
+    background-color: $grayscale_ECECF1;
+
     .post-feed {
       font-size: 0.875rem;
-      color: #555;
+      font-weight: 700;
+      color: $brand_blue;
       display: flex;
       align-items: center;
-      
+
       .post-feed-icon {
         margin-right: 0.5rem;
         color: $brand_blue;
       }
 
       .post-feed-category {
+        margin-right: 0.5rem;
         font-weight: bold;
       }
 
       .post-subfeed-category {
-        color: $brand_blue;
+        color: $brand_blue_light;
       }
     }
 
     .post-timestamp {
-      color: #aaa;
+      color: $grayscale_49494f;
       font-size: 0.875rem;
       display: flex;
       align-items: center;
 
       svg {
+        color: $grayscale_8C8D91;
         margin-right: 0.5rem;
       }
     }
@@ -57,57 +60,74 @@
   &-body {
     padding: 1.5rem;
 
-    &-author-info {
+    .post-author {
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
 
-      &-image {
+      .post-author-image {
         border-radius: 50%;
         width: 50px;
         height: 50px;
         margin-right: 1rem;
       }
 
-      &-text {
+      .post-author-info {
         display: flex;
         flex-direction: column;
-
-        &-name {
-          font-weight: bold;
-          color: #333;
+        
+        .post-author-company {
+          color: $grayscale_A3A3A8;
+          font-weight: 700;
+          font-size: 16px;
+          margin-right: 5px;
+          line-height: 20px;
         }
 
-        &-company {
-          color: #777;
+        .post-title {
+          font-size: 22.4px;
+          font-weight: 700;
+          margin-top: 0.5rem;
+          color: $grayscale_49494f;
         }
       }
     }
 
-    &-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      color: #333;
-    }
+    .post-content {
+      color: $grayscale_49494f;
+      line-height: 22.4px;
+      font-size: 19.2px;
+      font-weight: 300;
 
-    &-content {
-      color: #333;
-      line-height: 1.5;
+      span {
+        color: $brand_blue;
+        font-weight: 700;
+        text-decoration: none;
+      }
 
       a {
         color: $brand_blue;
         text-decoration: none;
-      }
+        transition: color 0.2s ease-in-out;
 
-      a:hover {
-        text-decoration: underline;
+        &:hover {
+          color: darken($brand_blue, 10%);
+          text-decoration: underline;
+        }
       }
 
       img {
         max-width: 100%;
         border-radius: 8px;
         margin-top: 1rem;
+      }
+    }
+
+    .post-image {
+      margin-top: 1rem;
+      img {
+        width: 100%;
+        border-radius: 8px;
       }
     }
   }
@@ -117,25 +137,48 @@
     justify-content: flex-start;
     gap: 1rem;
     padding: 0.75rem 1.5rem;
-    border-top: 1px solid #ddd;
-
+    
     .post-action {
       background: none;
       border: none;
-      color: $brand_blue;
       cursor: pointer;
       padding: 0.5rem;
       border-radius: 4px;
-      transition: background-color 0.2s ease-in-out;
       display: flex;
       align-items: center;
-      
+      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
       svg {
         margin-right: 0.5rem;
+        transition: color 0.2s ease-in-out;
       }
 
-      &:hover {
-        background-color: #f0f0f0;
+      &.like.active, &.like:hover {
+        color: red;
+        svg {
+          color: red;
+        }
+      }
+
+      &.save.active, &.save:hover {
+        color: $brand_blue;
+        svg {
+          color: $brand_blue;
+        }
+      }
+
+      &.more-actions {
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.2s ease-in-out;
+        color: $grayscale_8C8D91;
+
+        &:hover {
+          background-color: $grayscale_ECECF1;
+        }
       }
     }
   }

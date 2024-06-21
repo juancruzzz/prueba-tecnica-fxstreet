@@ -1,6 +1,5 @@
 import React from 'react';
 import fxstreetLogo from '../assets/images/fxstreet-logo.png';
-import '../assets/styles/components/_sidebar.scss';
 
 const Sidebar: React.FC = () => {
   return (

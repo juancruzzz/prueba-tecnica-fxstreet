@@ -1,9 +1,14 @@
-@import './utils/variables';
-@import './base/globals';
-@import './components/container';
-@import './components/sidebar';
-@import './components/dashboard';
-@import './components/filters';
+@import 'utils/variables';
+@import 'base/colors';
+@import 'base/globals';
+@import 'base/typography';
+@import 'components/dashboard';
+@import 'components/dropdownMenu';
+@import 'components/filters';
+@import 'components/header';
+@import 'components/layout';
+@import 'components/posts';
+@import 'components/sidebar';
 
 body {
   margin: 0;

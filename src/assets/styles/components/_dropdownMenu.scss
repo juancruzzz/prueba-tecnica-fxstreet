@@ -1,0 +1,93 @@
+@import '../base/globals';
+
+.dropdown-menu {
+  display: inline-block;
+
+  .more-actions {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    transition: background-color 0.2s ease-in-out;
+    color: $grayscale_8C8D91;
+    &:hover {
+      background-color: $grayscale_ECECF1;
+    }
+  }
+
+  .menu {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+    margin-top: 0.5rem;
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $grayscale_F0F0F1;
+      }
+
+      .menu-item-icon {
+        margin-right: 0.5rem;
+      }
+
+      .menu-item-label {
+        font-size: 14px;
+        color: $grayscale_49494f;
+      }
+
+      input[type="radio"] {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .menu-header {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      background-color: $grayscale_F0F0F1;
+
+      .menu-item-icon {
+        margin-right: 0.5rem;
+      }
+
+      .menu-item-label {
+        font-size: 14px;
+        color: $grayscale_49494f;
+        font-weight: bold;
+      }
+    }
+
+    .menu-submit {
+      display: block;
+      width: calc(100% - 2rem);
+      margin: 1rem;
+      padding: 0.75rem;
+      background-color: white;
+      color: $grayscale_49494f;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid $grayscale_49494f;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $grayscale_F0F0F1;
+        color: $grayscale_49494f;
+      }
+    }
+  }
+}

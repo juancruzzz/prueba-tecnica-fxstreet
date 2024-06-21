@@ -20,7 +20,6 @@ const useApi = () => {
     }
   );
 
-  // Interceptor para manejar respuestas y errores
   api.interceptors.response.use(
     (response: AxiosResponse) => {
       setLoading(false);

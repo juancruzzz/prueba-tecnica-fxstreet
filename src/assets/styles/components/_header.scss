@@ -1,78 +1,83 @@
 @import "../base/globals";
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: $grayscale_lightest;
+  border-bottom: 1px solid $grayscale_dddef;
+  min-height: 65px;
+
+  .header-left,
+  .header-right {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 1rem 0 1rem;
-    background-color: $grayscale_lightest;
-    border-bottom: 1px solid $grayscale_dddef;
-    height: 65px;
-    .header-left,
-    .header-right {
+  }
+
+  .header-right {
+    gap: 0.5rem;
+    height: 100%;
+
+    .skeleton-wrapper {
       display: flex;
       align-items: center;
-    }
-  
-    .header-right {
-      gap: 0.5rem;
+      justify-content: center;
+      padding: 0 0.5rem 0 1.5rem;
+      border-left: 1px solid $grayscale_dddef;
       height: 100%;
-  
-      .skeleton-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 0.5rem 0 1.5rem;
-        border-left: 1px solid $grayscale_dddef;
-        height: 100%;
-      }
-  
-      .skeleton {
-        background-color: $grayscale_dddef;
-  
-        &.skeleton-circle {
-          width: 18px;
-          height: 18px;
-          background-color: #b0b0b0;
-          border-radius: 50%;
-        }
-      }
     }
-  
-    .skeleton {
-      margin-right: 6px;
-      background-color: $grayscale_dddef;
-      &.skeleton-blue {
-        width: 136px;
-        height: 10px;
-        background-color: $brand_blue;
-      }
-  
-      &.skeleton-circle-blue {
-        width: 18px;
-        height: 18px;
-        background-color: $brand_blue;
-        border-radius: 50%;
-      }
-  
-      &.skeleton-orange {
-        width: 136px;
-        height: 10px;
-        background-color: #f0ad4e;
-      }
-  
-      &.skeleton-gray {
-        width: 91px;
-        height: 10px;
-        background-color: $grayscale_49494f;
-      }
 
-      &.skeleton-circle-gray {
+    .skeleton {
+      background-color: $grayscale_dddef;
+
+      &.skeleton-circle {
         width: 18px;
         height: 18px;
-        background-color: $grayscale_49494f;
+        background-color: #b0b0b0;
         border-radius: 50%;
       }
-  
     }
   }
+
+  .skeleton {
+    margin-right: 6px;
+    background-color: $grayscale_dddef;
+
+    &.skeleton-blue {
+      width: 136px;
+      height: 10px;
+      background-color: $brand_blue;
+    }
+
+    &.skeleton-circle-blue {
+      width: 18px;
+      height: 18px;
+      background-color: $brand_blue;
+      border-radius: 50%;
+    }
+
+    &.skeleton-orange {
+      width: 136px;
+      height: 10px;
+      background-color: #f0ad4e;
+    }
+
+    &.skeleton-gray {
+      width: 91px;
+      height: 10px;
+      background-color: $grayscale_49494f;
+    }
+
+    &.skeleton-circle-gray {
+      width: 18px;
+      height: 18px;
+      background-color: $grayscale_49494f;
+      border-radius: 50%;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
