@@ -9,15 +9,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: "18.x"
-          cache: "yarn"
-      - run: yarn install
-      - run: yarn generate
+          cache: "npm"
+      - name: Install dependencies
+        run: npm install
+      - name: Build project
+        run: npm run build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
 
@@ -27,7 +31,6 @@ jobs:
     permissions:
       pages: write
       id-token: write
-      actions: read
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
