@@ -5,7 +5,7 @@ import Dashboard from '../pages/Dashboard';
 
 const AppRouter: React.FC = () => {
     return (
-        <Router>
+        <Router basename="/prueba-tecnica-fxstreet">
             <Layout>
                 <Routes>
                     <Route path="/" element={ <Dashboard /> } />
