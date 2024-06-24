@@ -21,7 +21,7 @@ jobs:
       - name: Build project
         run: npm run build
       - name: Verify build output
-        run: ls -l ./dist
+        run: ls -l ./dist  # Verifica que los archivos correctos estén en dist
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -31,9 +31,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v4
@@ -44,5 +41,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./dist
