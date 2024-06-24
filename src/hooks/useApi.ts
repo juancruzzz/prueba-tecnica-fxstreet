@@ -1,5 +1,5 @@
+import axios, { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import { useState } from 'react';
-import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
 const useApi = () => {
   const [loading, setLoading] = useState(false);
@@ -10,7 +10,7 @@ const useApi = () => {
   });
 
   api.interceptors.request.use(
-    (config: AxiosRequestConfig) => {
+    (config: InternalAxiosRequestConfig) => {
       setLoading(true);
       return config;
     },
