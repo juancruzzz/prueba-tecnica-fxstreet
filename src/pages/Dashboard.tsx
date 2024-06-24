@@ -15,23 +15,26 @@ const Dashboard: React.FC = () => {
         <div className="dashboard">
             <div className="dashboard-content">
                 <div className="content-column">
-                    <Filters selectedFilter={ selectedFilter } onFilterChange={ handleFilterChange } isMobile={isMobile} />
+                    <Filters selectedFilter={ selectedFilter } onFilterChange={ handleFilterChange } isMobile={ isMobile } />
                     <Posts filter={ selectedFilter } />
                 </div>
-                <div className="sidebar-column">
-                    <div className="additional-content">
-                        <div className="additional-title"></div>
-                        <div className="additional-bar"></div>
-                    </div>
 
-                    <div className="sidebar-container">
-                        <div className="sidebar-content">
-                            <div className="sidebar-title"></div>
-                            <div className="sidebar-circle"></div>
+                { !isMobile && (
+                    <div className="sidebar-column">
+                        <div className="additional-content">
+                            <div className="additional-title"></div>
+                            <div className="additional-bar"></div>
                         </div>
-                    </div>
 
-                </div>
+                        <div className="sidebar-container">
+                            <div className="sidebar-content">
+                                <div className="sidebar-title"></div>
+                                <div className="sidebar-circle"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                ) }
             </div>
         </div>
     );

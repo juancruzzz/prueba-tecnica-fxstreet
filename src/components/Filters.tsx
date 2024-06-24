@@ -33,7 +33,7 @@ const Filters: React.FC<FiltersProps> = ({ selectedFilter, onFilterChange, isMob
             <span className="dropdown-icon">&#9662;</span>
           </>
         ) : (
-          <FontAwesomeIcon icon={faFilter} />
+          <FontAwesomeIcon icon={faFilter} className='icon' />
         ) }
 
       </div>
