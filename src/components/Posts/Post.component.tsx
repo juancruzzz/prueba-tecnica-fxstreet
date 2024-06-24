@@ -1,5 +1,5 @@
 import { faBookmark as fasBookmark, faHeart as fasHeart } from '@fortawesome/free-regular-svg-icons';
-import { faBookmark as farBookmark, faHeart as farHeart } from '@fortawesome/free-solid-svg-icons';
+import { faFile, faBookmark as farBookmark, faHeart as farHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import "../../assets/styles/components/_posts.scss";
@@ -22,7 +22,7 @@ const Post: React.FC<{ post: PostInterface, parentRef: React.RefObject<HTMLDivEl
         <div className="post" key={ post.id }>
             <div className="post-header">
                 <div className="post-feed">
-                    <FontAwesomeIcon icon={ farHeart } className="post-feed-icon" />
+                    <FontAwesomeIcon icon={ faFile } className="post-feed-icon" />
                     <span className="post-feed-category">{ post.feed }</span>
                     <span className="post-subfeed-category">&gt; { post.subFeed }</span>
                 </div>
